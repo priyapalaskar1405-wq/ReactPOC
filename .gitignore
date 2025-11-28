@@ -1,0 +1,21 @@
+# Ignore node_modules folder
+node_modules/
+
+# Ignore Next.js build output
+.next/
+
+# Ignore environment variable files
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Ignore npm logs
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Ignore coverage reports
+.nyc_output
+coverage

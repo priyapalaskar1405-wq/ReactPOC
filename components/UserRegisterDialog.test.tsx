@@ -8,7 +8,9 @@ describe('UserRegisterDialog', () => {
   const mockSetPassword = jest.fn()
   const mockSetAge = jest.fn()
   const mockSetGender = jest.fn()
-  const mockToggleInterest = jest.fn()
+  const mockSetSkills = jest.fn()
+  const mockSetInterests = jest.fn()
+  const mockOnRegister = jest.fn()
 
   const defaultProps = {
     name: '',
@@ -26,10 +28,10 @@ describe('UserRegisterDialog', () => {
     setPassword: mockSetPassword,
     setAge: mockSetAge,
     setRole: jest.fn(),
-    setSkills: jest.fn(),
+    setSkills: mockSetSkills,
     setGender: mockSetGender,
-    toggleInterest: mockToggleInterest,
-    onRegister: jest.fn(),
+    setInterests: mockSetInterests,
+    onRegister: mockOnRegister,
   }
 
   beforeEach(() => {
@@ -54,7 +56,6 @@ describe('UserRegisterDialog', () => {
     render(<UserRegisterDialog {...defaultProps} />)
 
     await user.click(screen.getByRole('button', { name: /register user/i }))
-
     await waitFor(() => {
       expect(screen.getByText('Name')).toBeInTheDocument()
       expect(screen.getByText('Email')).toBeInTheDocument()
@@ -121,7 +122,7 @@ describe('UserRegisterDialog', () => {
     })
 
     await user.click(screen.getByRole('checkbox', { name: 'Music' }))
-    expect(mockToggleInterest).toHaveBeenCalledWith('Music')
+    expect(mockSetInterests).toHaveBeenCalledWith(expect.arrayContaining(['Music']))
   })
 
   it('should display pre-filled form values', async () => {
@@ -145,4 +146,5 @@ describe('UserRegisterDialog', () => {
       expect(screen.getByDisplayValue('30')).toBeInTheDocument()
     })
   })
+
 })

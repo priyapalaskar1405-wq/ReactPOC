@@ -22,13 +22,13 @@ jest.mock('../../store/useAddUserFormStore', () => ({
   useAddUserFormStore: jest.fn(),
 }))
 
-jest.mock('../../components/UserRegisterDialog', () => {
+jest.mock('../../components/user-register-dialog', () => {
   return function MockUserRegisterDialog() {
     return <div>User Register Dialog</div>
   }
 })
 
-jest.mock('../../components/UserTable', () => {
+jest.mock('../../components/user-table', () => {
   return function MockUserTable() {
     return <div>User Table</div>
   }

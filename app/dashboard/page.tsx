@@ -6,8 +6,8 @@ import { useAddUserFormStore } from "@/store/useAddUserFormStore";
 import { useUserStore } from "@/store/useUserStore";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import UserRegisterDialog from "../../components/UserRegisterDialog";
-import UserTable from "../../components/UserTable";
+import UserRegisterDialog from "../../components/user-register-dialog";
+import UserTable from "../../components/user-table";
 
 export default function DashboardPage() {
   const router = useRouter();

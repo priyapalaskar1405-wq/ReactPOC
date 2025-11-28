@@ -60,6 +60,6 @@ describe('UserTable', () => {
   it('should render correct number of rows', () => {
     render(<UserTable users={mockUsers} />)
     const rows = screen.getAllByRole('row')
-    expect(rows).toHaveLength(3) // 1 header + 2 data rows
+    expect(rows).toHaveLength(3) 
   })
 })

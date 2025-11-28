@@ -59,8 +59,8 @@ export default function DashboardPage() {
         interests,
       });
     }
-    reset(); // Reset form after submission
-    setUserToEdit(null); // Reset edit state
+    reset(); 
+    setUserToEdit(null); 
   };
 
   const handleLogout = () => {
@@ -107,7 +107,7 @@ export default function DashboardPage() {
             setInterests={setInterests}
             toggleInterest={() => {}}
             onRegister={registerUser}
-            userToEdit={userToEdit} // for userToEdit here
+            userToEdit={userToEdit} 
           />
         </div>
       </div>
@@ -117,7 +117,7 @@ export default function DashboardPage() {
         <UserTable
           users={users}
           onDelete={handleDeleteUser}
-          onEdit={handleEditUser} // for edit function
+          onEdit={handleEditUser} 
         />
       </div>
     </div>

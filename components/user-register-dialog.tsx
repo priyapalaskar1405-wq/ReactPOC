@@ -23,9 +23,9 @@ interface Props {
   setRole: (val: string) => void;
   setSkills: (val: string[]) => void;
   setGender: (val: string) => void;
-  setInterests: (val: string[]) => void;  // Adjusted to handle an array of interests
+  setInterests: (val: string[]) => void;  
   onRegister: () => void;
-  userToEdit: any;  // Prop for editing an existing user
+  userToEdit: any;  
 }
 
 export default function UserRegisterDialog({
@@ -48,10 +48,10 @@ export default function UserRegisterDialog({
   setGender,
   setInterests,
   onRegister,
-  userToEdit,  // Handle user editing
+  userToEdit, 
 }: Props) {
   const [error, setError] = useState<string>("");
-  const [isDialogOpen, setDialogOpen] = useState<boolean>(false);  // Control dialog visibility
+  const [isDialogOpen, setDialogOpen] = useState<boolean>(false);  
 
   useEffect(() => {
     if (userToEdit) {

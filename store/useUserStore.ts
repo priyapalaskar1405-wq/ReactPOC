@@ -15,7 +15,8 @@ interface UserStore {
 }
 export const useUserStore = create<UserStore>((set) => ({
   users: [
-    { id: 1, name: "John Doe", email: "john@example.com", age: 5, role: "Admin" },
+    { id: 1, name: "John Doe",password:"123456", email: "john@example.com", age: 5, role: "Admin",  skills: ['React', 'Node'],
+      gender: 'male', interests: ['Music', 'Sports'], },
   ],
 
   // Add a new user

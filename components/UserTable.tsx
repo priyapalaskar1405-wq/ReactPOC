@@ -2,7 +2,7 @@
 
 
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { User } from "@/store/types";
+import { User } from "@/types/types";
 import { useEffect } from "react";
 import { json } from "stream/consumers";
 interface UserTableProps {

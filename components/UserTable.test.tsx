@@ -1,7 +1,7 @@
 
 import { render, screen } from '@testing-library/react'
 import UserTable from './UserTable'
-import { User } from '@/store/types'
+import { User } from '@/types/types'
 
 describe('UserTable', () => {
   const mockUsers: User[] = [

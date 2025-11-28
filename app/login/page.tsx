@@ -8,7 +8,7 @@ import { Label } from "@/components/ui/label";
 import { useAuthStore } from "@/store/authStore";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { LoginForm } from "../../store/types";
+import { LoginForm } from "../../types/types";
 
 export default function LoginPage() {
   const router = useRouter();

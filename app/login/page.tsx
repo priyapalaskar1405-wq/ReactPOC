@@ -1,4 +1,4 @@
-import LoginPage from "@/components/login-page"; 
+import LoginPage from '@/components/login-page';
 
 const Login = () => {
   return (
@@ -6,6 +6,6 @@ const Login = () => {
       <LoginPage />
     </div>
   );
-}
+};
 
 export default Login;

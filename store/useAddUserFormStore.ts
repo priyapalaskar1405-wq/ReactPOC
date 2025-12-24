@@ -1,4 +1,4 @@
-import { create } from "zustand";
+import { create } from 'zustand';
 
 interface AddUserFormStore {
   name: string;
@@ -21,13 +21,13 @@ interface AddUserFormStore {
 }
 
 export const useAddUserFormStore = create<AddUserFormStore>((set) => ({
-  name: "",
-  email: "",
-  password: "",
-  age: "",
-  role: "",
+  name: '',
+  email: '',
+  password: '',
+  age: '',
+  role: '',
   skills: [],
-  gender: "",
+  gender: '',
   interests: [],
   setName: (name) => set({ name }),
   setEmail: (email) => set({ email }),
@@ -39,13 +39,13 @@ export const useAddUserFormStore = create<AddUserFormStore>((set) => ({
   setInterests: (interests) => set({ interests }),
   reset: () =>
     set({
-      name: "",
-      email: "",
-      password: "",
-      age: "",
-      role: "",
+      name: '',
+      email: '',
+      password: '',
+      age: '',
+      role: '',
       skills: [],
-      gender: "",
+      gender: '',
       interests: [],
     }),
 }));

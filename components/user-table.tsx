@@ -1,8 +1,15 @@
-"use client";
+'use client';
 
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { User } from "@/types/types";
-import { useEffect } from "react";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table';
+import { User } from '@/types/types';
+import { useEffect } from 'react';
 interface UserTableProps {
   users: User[];
   onDelete: (userId: number) => void;
@@ -10,13 +17,11 @@ interface UserTableProps {
 }
 
 export default function UserTable({ users, onDelete, onEdit }: UserTableProps) {
-  
-  useEffect(()=>{
-console.log(users)
-  },[users])
+  useEffect(() => {
+    console.log(users);
+  }, [users]);
   return (
     <div className="border rounded-lg overflow-hidden">
-      
       <Table>
         <TableHeader className="bg-gray-100">
           <TableRow>
@@ -40,10 +45,12 @@ console.log(users)
               <TableCell>{user.email}</TableCell>
               <TableCell>{user.age}</TableCell>
               <TableCell>{user.role}</TableCell>
-              <TableCell>{(user.skills ?? []).join(", ")}</TableCell>
+              <TableCell>{(user.skills ?? []).join(', ')}</TableCell>
               <TableCell>{user.gender}</TableCell>
               <TableCell>
-                {(Array.isArray(user.interests) ? user.interests : []).join(", ")}
+                {(Array.isArray(user.interests) ? user.interests : []).join(
+                  ', ',
+                )}
               </TableCell>
               <TableCell>
                 <button

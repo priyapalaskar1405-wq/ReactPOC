@@ -1,5 +1,5 @@
-export type Skill = "React" | "Node" | "Python" | "UI/UX" | "Go";
-export type Interest = "Music" | "Sports" | "Travel";
+export type Skill = 'React' | 'Node' | 'Python' | 'UI/UX' | 'Go';
+export type Interest = 'Music' | 'Sports' | 'Travel';
 
 export interface User {
   id: number;
@@ -8,9 +8,9 @@ export interface User {
   password?: string;
   age: number | string;
   role: string;
-  skills: string[];       
+  skills: string[];
   gender: string;
-  interests: string[];    
+  interests: string[];
 }
 
 export interface LoginForm {
@@ -24,9 +24,8 @@ export interface User {
   email: string;
   password?: string;
   age: number | string;
-  role: "admin" | "manager" | "staff" | "";
+  role: 'admin' | 'manager' | 'staff' | '';
   skills: string[];
-  gender: "male" | "female" | "";
+  gender: 'male' | 'female' | '';
   interests: string[];
 }
-

@@ -1,21 +1,21 @@
-"use client";
+'use client';
 
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { useAuthStore } from "@/store/authStore";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
-import { LoginForm } from "../types/types";
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { useAuthStore } from '@/store/authStore';
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
+import { LoginForm } from '../types/types';
 
 export default function LoginPage() {
   const router = useRouter();
   const login = useAuthStore((state) => state.login);
 
-  const [form, setForm] = useState<LoginForm>({ email: "", password: "" });
-  const [error, setError] = useState<string>("");
+  const [form, setForm] = useState<LoginForm>({ email: '', password: '' });
+  const [error, setError] = useState<string>('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { id, value } = e.target;
@@ -24,15 +24,15 @@ export default function LoginPage() {
 
   const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const dummyEmail = "test@gmail.com";
-    const dummyPass = "123456";
+    const dummyEmail = 'test@gmail.com';
+    const dummyPass = '123456';
 
     if (form.email === dummyEmail && form.password === dummyPass) {
       login();
-      localStorage.setItem("auth", "true");
-      router.push("/dashboard");
+      localStorage.setItem('auth', 'true');
+      router.push('/dashboard');
     } else {
-      setError("Invalid email or password");
+      setError('Invalid email or password');
     }
   };
 
@@ -40,12 +40,19 @@ export default function LoginPage() {
     <div className="flex min-h-screen items-center justify-center bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 p-4">
       <Card className="w-full max-w-sm shadow-xl rounded-xl bg-white">
         <CardHeader>
-          <CardTitle className="text-center text-3xl font-semibold text-gray-800">Login</CardTitle>
+          <CardTitle className="text-center text-3xl font-semibold text-gray-800">
+            Login
+          </CardTitle>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleLogin} className="space-y-6">
             <div className="grid gap-3">
-              <Label htmlFor="email" className="text-lg font-medium text-gray-700">Email</Label>
+              <Label
+                htmlFor="email"
+                className="text-lg font-medium text-gray-700"
+              >
+                Email
+              </Label>
               <Input
                 id="email"
                 type="email"
@@ -58,7 +65,12 @@ export default function LoginPage() {
             </div>
 
             <div className="grid gap-3">
-              <Label htmlFor="password" className="text-lg font-medium text-gray-700">Password</Label>
+              <Label
+                htmlFor="password"
+                className="text-lg font-medium text-gray-700"
+              >
+                Password
+              </Label>
               <Input
                 id="password"
                 type="password"
@@ -71,7 +83,10 @@ export default function LoginPage() {
             </div>
 
             {error && (
-              <Alert variant="destructive" className="border-red-600 bg-red-100 text-red-800">
+              <Alert
+                variant="destructive"
+                className="border-red-600 bg-red-100 text-red-800"
+              >
                 <AlertTitle className="font-semibold">Error</AlertTitle>
                 <AlertDescription>{error}</AlertDescription>
               </Alert>
@@ -84,9 +99,7 @@ export default function LoginPage() {
               Login
             </Button>
 
-            <div className="text-center mt-4 text-sm text-gray-600">
-              {" "}
-            </div>
+            <div className="text-center mt-4 text-sm text-gray-600"> </div>
           </form>
         </CardContent>
       </Card>

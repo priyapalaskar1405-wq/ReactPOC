@@ -83,6 +83,10 @@ export default function DashboardPage() {
     router.push('/login');
   };
 
+  const handleBooking = () => {
+    router.push('/booking')    
+  };
+
   const handleDeleteUser = (userId: number) => {
     deleteUser(userId);
   };
@@ -101,6 +105,12 @@ export default function DashboardPage() {
             onClick={handleLogout}
           >
             Logout
+          </Button>
+           <Button
+            className="bg-blue-600 hover:bg-red-700 text-white"
+            onClick={handleBooking}
+          >
+            Booking
           </Button>
 
           <UserRegisterDialog

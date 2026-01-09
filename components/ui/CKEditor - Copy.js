@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from "react"
 import dynamic from "next/dynamic"
-import useCounterStore from "@/store/useAddUserFormStore"
 
 // Dynamically import CKEditor with SSR disabled
 const CKEditor = dynamic(() => import("@ckeditor/ckeditor5-react").then((mod) => mod.CKEditor), { ssr: false })
@@ -10,10 +9,6 @@ const CKEditor = dynamic(() => import("@ckeditor/ckeditor5-react").then((mod) =>
 //const ClassicEditor = dynamic(() => import("@ckeditor/ckeditor5-build-classic"), { ssr: false })
 
 const EditorComponent = () => {
-    const {
-     setCount,
-    } = useCounterStore();
-
   const [editorData, setEditorData] = useState("")
   const [editorLoaded, setEditorLoaded] = useState(false)
 
@@ -32,19 +27,17 @@ const EditorComponent = () => {
   }
 
   return (
-    <>
     <CKEditor
       editor={Editor}
       data={editorData}
       onChange={(event, editor) => {
         const data = editor.getData()
         setEditorData(data)
-        setCount(data)
       }}
       config={{
           toolbar: [
             // Left side tools
-            'bold', 'italic', 'bulletedList', 'numberedList', 'blockQuote', 'undo', 'redo', 'insertTable', 'mediaEmbed', 'link',
+            'italic', 'bulletedList', 'numberedList', 'blockQuote', 'undo', 'redo', 'insertTable', 'mediaEmbed', 'link',
             
             // Indent controls
             'outdent', 'indent', // Increase and Decrease Indent buttons
@@ -63,13 +56,7 @@ const EditorComponent = () => {
           },
           language: 'en', // Optional, set language for editor
         }}
-        
     />
-     <div>
-        <h3>Output Data:</h3>
-        <div dangerouslySetInnerHTML={{ __html: editorData }} />
-      </div>
-    </>
   )
 }
 

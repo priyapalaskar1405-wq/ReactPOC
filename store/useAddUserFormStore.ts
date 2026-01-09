@@ -49,3 +49,14 @@ export const useAddUserFormStore = create<AddUserFormStore>((set) => ({
       interests: [],
     }),
 }));
+
+
+const useCounterStore = create((set) => ({
+  count: 0,
+
+  // single setter function
+  setCount: (newCount: unknown) => set({ count: newCount }),
+}));
+
+export default useCounterStore;
+
